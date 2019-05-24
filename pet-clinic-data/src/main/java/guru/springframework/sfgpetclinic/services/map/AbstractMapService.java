@@ -11,7 +11,7 @@ import guru.springframework.sfgpetclinic.model.BaseEntity;
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
-  protected Map<Long, T> map = new HashMap<>();
+  private Map<Long, T> map = new HashMap<>();
 
   Set<T> findAll() {
     return new HashSet<>(map.values());
