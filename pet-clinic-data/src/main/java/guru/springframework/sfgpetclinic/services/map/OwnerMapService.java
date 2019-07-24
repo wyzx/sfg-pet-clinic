@@ -71,6 +71,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
   @Override
   public Owner findByLastName(String lastName) {
-    return null; //FIXME
+    return findAll()
+        .stream()
+        .filter(o -> o.getLastName().equalsIgnoreCase(lastName))
+        .findFirst()
+        .orElse(null);
   }
 }
